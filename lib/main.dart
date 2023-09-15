@@ -7,10 +7,12 @@ void main() {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
 
@@ -20,20 +22,22 @@ class MyApp extends StatelessWidget{
    theme: ThemeData(
      fontFamily:'Ubuntu',
    ),
-   home: SplaceScreen(),
+   home: const SplaceScreen(),
  );
   }
 
 }
 class MyHome extends StatefulWidget {
+  const MyHome({super.key});
+
   @override
   State<MyHome> createState() => _MyHomeState();
 }
 
 class _MyHomeState extends State<MyHome> {
-  var mainColor = Color(0xff01C9BE);
+  var mainColor = const Color(0xff01C9BE);
 
-  var bgColor = Color(0xffF5F3F4);
+  var bgColor = const Color(0xffF5F3F4);
   var amtController=TextEditingController();
   var customTipController=TextEditingController();
   var billAmt=0.0;
@@ -59,23 +63,23 @@ class _MyHomeState extends State<MyHome> {
             child: Column(
               children: [
                 myHeading(),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 myTotal(),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 myBill(),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 myTip(),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 billSpliter(),
-                SizedBox(
+                const SizedBox(
                   height: 28,
                 ),
 
@@ -106,17 +110,17 @@ class _MyHomeState extends State<MyHome> {
                    Row(
                      crossAxisAlignment: CrossAxisAlignment.end,
                      children: [
-                       Text('Mr ',style: TextStyle(
+                       const Text('Mr ',style: TextStyle(
                    fontSize: 15,
                    fontWeight: FontWeight.w300
                ),),
-                       Text('TIP',style: TextStyle(
+                       const Text('TIP',style: TextStyle(
                          fontSize: 30,
                          fontWeight: FontWeight.bold
                        ),),
                      ],
                    ),
-                   Text('Calculater',style:TextStyle(
+                   const Text('Calculater',style:TextStyle(
                        fontSize:20 ,
                        fontWeight: FontWeight.w300
                    ),),
@@ -149,7 +153,7 @@ class _MyHomeState extends State<MyHome> {
 
 
                 children: [
-                  Text("Total p/person",style:TextStyle(
+                  const Text("Total p/person",style:TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w300
               ),
@@ -158,10 +162,10 @@ class _MyHomeState extends State<MyHome> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text("\$",style: TextStyle(fontSize: 25,
+                      const Text("\$",style: TextStyle(fontSize: 25,
                     fontWeight: FontWeight.bold,
                   ),),
-                      Text(perPersonAmt==0.0?"000":perPersonAmt.toStringAsFixed(2),style: TextStyle(
+                      Text(perPersonAmt==0.0?"000":perPersonAmt.toStringAsFixed(2),style: const TextStyle(
                         fontSize: 37,
                         fontWeight: FontWeight.bold,
                       ),)
@@ -176,7 +180,7 @@ class _MyHomeState extends State<MyHome> {
                     children: [
                       Column(
                         children: [
-                          Text('Total bill',style: TextStyle(
+                          const Text('Total bill',style: TextStyle(
                           fontSize: 18
                   ),),
                           Row(
@@ -198,7 +202,7 @@ class _MyHomeState extends State<MyHome> {
                       ),
                       Column(
                         children: [
-                          Text('Total tip',style: TextStyle(
+                          const Text('Total tip',style: TextStyle(
                               fontSize: 18
                           ),),
                           Row(
@@ -246,8 +250,8 @@ class _MyHomeState extends State<MyHome> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Enter',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                      Text('your bill'),
+                      const Text('Enter',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                      const Text('your bill'),
                     ],
                   ),
                 ),
@@ -255,7 +259,7 @@ class _MyHomeState extends State<MyHome> {
                   flex: 7,
                    child: Container(
                      height: 50,
-                     decoration: BoxDecoration(
+                     decoration: const BoxDecoration(
                      color: Colors.white,
                        borderRadius: BorderRadius.all(Radius.circular(20))
                      ),
@@ -310,8 +314,8 @@ class _MyHomeState extends State<MyHome> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Choose',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                      Text('your tip'),
+                      const Text('Choose',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                      const Text('your tip'),
                     ],
                   ),
                 ),
@@ -326,7 +330,7 @@ class _MyHomeState extends State<MyHome> {
                          children: [
                            ConstrainedBox(
 
-                             constraints: BoxConstraints.tightFor(
+                             constraints: const BoxConstraints.tightFor(
                                height: 50,
 
                              ),
@@ -343,20 +347,20 @@ class _MyHomeState extends State<MyHome> {
                                  });
                              }, child: Row(
                                children: [
-                                 Text('10',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 23) ,),
-                                 Text('%'),
+                                 const Text('10',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 23) ,),
+                                 const Text('%'),
                                ],
                              ),
                                style: ElevatedButton.styleFrom(
 
                                    backgroundColor: colorChange10==false?Colors.redAccent:mainColor,
-                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)))
+                               shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)))
                              ),
                              ),
                            ),
                            ConstrainedBox(
 
-                             constraints: BoxConstraints.tightFor(
+                             constraints: const BoxConstraints.tightFor(
                                height: 50,
 
                              ),
@@ -373,19 +377,19 @@ class _MyHomeState extends State<MyHome> {
                                });
                              }, child: Row(
                                children: [
-                                 Text('15',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 23) ,),
-                                 Text('%'),
+                                 const Text('15',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 23) ,),
+                                 const Text('%'),
                                ],
                              ),
                                style: ElevatedButton.styleFrom(
                                    backgroundColor: colorChange15==false?Colors.redAccent:mainColor,
-                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)))
+                                   shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)))
                                ),
                              ),
                            ),
                            ConstrainedBox(
 
-                             constraints: BoxConstraints.tightFor(
+                             constraints: const BoxConstraints.tightFor(
                                height: 50,
 
                              ),
@@ -403,8 +407,8 @@ class _MyHomeState extends State<MyHome> {
 
                              }, child: Row(
                                children: [
-                                 Text('20',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 23) ,),
-                                 Text('%'),
+                                 const Text('20',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 23) ,),
+                                 const Text('%'),
                                ],
                              ),
                                style:ElevatedButton.styleFrom(
@@ -415,12 +419,12 @@ class _MyHomeState extends State<MyHome> {
                            ),
                          ],
                        ),
-                       SizedBox(
+                       const SizedBox(
                          height: 20,
                        ),
                        ConstrainedBox(
 
-                         constraints: BoxConstraints.tightFor(
+                         constraints: const BoxConstraints.tightFor(
                            height: 50,
 
                          ),
@@ -446,7 +450,7 @@ class _MyHomeState extends State<MyHome> {
 
                          keyboardType: TextInputType.number,
                          decoration:InputDecoration(
-                           border: OutlineInputBorder(
+                           border: const OutlineInputBorder(
                              borderRadius: BorderRadius.all(Radius.circular(20))
                            ),
                            hintText: 'Add Tip..',
@@ -465,7 +469,7 @@ class _MyHomeState extends State<MyHome> {
                               visible: !isCustomTip,
                               child: ConstrainedBox(
 
-                                constraints: BoxConstraints.tightFor(height: 50),
+                                constraints: const BoxConstraints.tightFor(height: 50),
                                 child: ElevatedButton(
 
                                   onPressed: (){
@@ -478,13 +482,13 @@ class _MyHomeState extends State<MyHome> {
                                   child: Row(
                                  mainAxisAlignment: MainAxisAlignment.center,
                                  children: [
-                                   Text('Custom tip',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 23) ,),
+                                   const Text('Custom tip',style:TextStyle(fontWeight: FontWeight.bold,fontSize: 23) ,),
 
                                  ],
                            ),
                                  style: ElevatedButton.styleFrom(
                                      primary: mainColor,
-                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)
+                                     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10)
                                      )
                                      )
                                  ),
@@ -525,8 +529,8 @@ class _MyHomeState extends State<MyHome> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Split',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                        Text('the total'),
+                        const Text('Split',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                        const Text('the total'),
                       ],
                     ),
                   ),
@@ -555,10 +559,10 @@ class _MyHomeState extends State<MyHome> {
                           width: 60,
                           decoration: BoxDecoration(
                               color: mainColor,
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(10),
                                   bottomLeft: Radius.circular(10))),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "-",
                               style: TextStyle(
@@ -581,13 +585,13 @@ class _MyHomeState extends State<MyHome> {
                         child: Container(
                           height: 55,
                           width: 140,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                           ),
                           child: Center(
                             child: Text(
                              noOfPerson.toString(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 35,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black),
@@ -612,10 +616,10 @@ class _MyHomeState extends State<MyHome> {
                           width: 60,
                           decoration: BoxDecoration(
                               color: mainColor,
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                   topRight: Radius.circular(10),
                                   bottomRight: Radius.circular(10))),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "+",
                               style: TextStyle(
